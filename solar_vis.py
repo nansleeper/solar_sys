@@ -28,7 +28,7 @@ scale_factor = 1
 def calculate_scale_factor(max_distance):
     """Вычисляет значение глобальной переменной **scale_factor** по данной характерной длине"""
     global scale_factor
-    scale_factor = 0.5*min(window_height, window_width)/max_distance
+    scale_factor = 0.5 * min(window_height, window_width)/max_distance
     print('Scale factor:', scale_factor)
 
 
@@ -43,7 +43,7 @@ def scale_x(x):
     **x** — x-координата модели.
     """
 
-    return int(x*scale_factor) + window_width//2
+    return int(x * scale_factor) + window_width//2
 
 
 def scale_y(y):
@@ -57,7 +57,7 @@ def scale_y(y):
 
     **y** — y-координата модели.
     """
-    pass  # FIXME
+    return int(y * scale_factor) + window_height//2
 
 
 
@@ -85,4 +85,5 @@ class DrawableObject:
         self.obj = obj
 
     def draw(self, surface):
-            pass  # FIXME
+
+        pg.draw.circle(surface, self.obj.color, (self.obj.x, self.obj.y), self.obj.R)
