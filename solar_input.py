@@ -56,8 +56,6 @@ def parse_star_parameters(line):
     data = line.split()
     star = Star(float(data[3]), float(data[4]), float(data[5]), float(data[6]), float(data[7]), data[2], int(data[1]))
     return star
-    
-    #FIXME: допишите парсер
 
 def parse_planet_parameters(line):
     """Считывает данные о планете из строки.
@@ -102,7 +100,7 @@ def write_space_objects_data_to_file(output_filename, space_objects):
             out_file.write(obj.type.capitalize + ' ' + str(obj.R) + ' '
                            + str(obj.color) + ' ' + str(obj.m) + ' ' + str(obj.x) +
                            ' ' + str(obj.y) + ' ' + str(obj.vx) + ' ' + str(obj.vy))
-            # FIXME!
+
 
 
 if __name__ == "__main__":
