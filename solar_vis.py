@@ -66,11 +66,21 @@ if __name__ == "__main__":
 
 
 class Drawer:
+
+    '''
+    Класс отрисовки объектов на surface screen.
+    '''
+
     def __init__(self, screen):
         self.screen = screen
 
 
     def update(self, figures, ui):
+
+        '''
+        Функция прорисовывает объектов из figures на surface ui.
+        '''
+
         self.screen.fill((0, 0, 0))
         for figure in figures:
             figure.draw(self.screen)
@@ -81,10 +91,14 @@ class Drawer:
 
 
 class DrawableObject:
+
+    '''
+    Класс прорисовки объектов на собственном surface.
+    '''
+
     def __init__(self, obj):
         self.obj = obj
 
     def draw(self, surface):
-
         pg.draw.circle(surface, self.obj.color, (scale_x(self.obj.x), scale_y(self.obj.y)), self.obj.R)
         
