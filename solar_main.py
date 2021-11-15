@@ -92,9 +92,9 @@ def init_ui(screen):
     global browser
     slider = thorpy.SliderX(100, (-10, 10), "Simulation speed")
     slider.user_func = slider_reaction
-    button_stop = thorpy.make_button("Quit", func=stop_execution)
-    button_pause = thorpy.make_button("Pause", func=pause_execution)
-    button_play = thorpy.make_button("Play", func=start_execution)
+    button_stop = thorpy.make_button("Quit", func = stop_execution)
+    button_pause = thorpy.make_button("Pause", func = pause_execution)
+    button_play = thorpy.make_button("Play", func = start_execution)
     timer = thorpy.OneLineText("Seconds passed")
 
     button_load = thorpy.make_button(text="Load a file", func=open_file)
@@ -156,12 +156,13 @@ def main():
             execution((cur_time - last_time) * time_scale)
             text = "%d seconds passed" % (int(model_time))
             timer.set_text(text)
-
         last_time = cur_time
         drawer.update(space_objects, box)
         time.sleep(1.0 / 60)
 
     print('Modelling finished!')
+
+
 
 if __name__ == "__main__":
     main()
