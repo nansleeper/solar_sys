@@ -34,6 +34,8 @@ def move_space_object(body, dt):
     Параметры:
 
     **body** — тело, которое нужно переместить.
+
+    **dt** — шаг по времени
     """
     ax = body.Fx / body.m
     body.vx += ax * dt
