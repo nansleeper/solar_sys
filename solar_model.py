@@ -22,11 +22,11 @@ def calculate_force(body, space_objects):
         r = ((body.x - obj.x)**2 + (body.y - obj.y)**2)**0.5
         r = max(r, body.R) # FIXME: обработка аномалий при прохождении одного тела сквозь другое
         if obj.x != body.x:
-            body.Fx += ((obj.x - body.x) / abs(obj.x - body.x)) \
-                * gravitational_constant * obj.m * body.m / (r ** 2)
+            body.Fx += (obj.x - body.x) \
+                * gravitational_constant * obj.m * body.m / (r ** 2) / r
         if obj.y != body.y:    
-            body.Fy += ((obj.y - body.y) / abs(obj.y - body.y)) \
-                * gravitational_constant * obj.m * body.m / (r ** 2)
+            body.Fy += (obj.y - body.y) \
+                * gravitational_constant * obj.m * body.m / (r ** 2) / r
 
 def move_space_object(body, dt):
     """Перемещает тело в соответствии с действующей на него силой.
